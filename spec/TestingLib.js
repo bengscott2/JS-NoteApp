@@ -3,11 +3,11 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error("Assertion failed: " + test + " is not truthy");
     } else {
-      console.log(test + " passed!")
+      console.log(`%c ${test} passed!`, 'background: #222; color: #bada55');
     }
   }
 };
 
-function Double (name) {
-    this.name = name;
+function NoteDouble (text) {
+    this.displayNote = text;
 };

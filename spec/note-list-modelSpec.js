@@ -1,25 +1,18 @@
-(function testNoteListExists() {
-  var noteList = new NoteList();
-  var object = new Object();
-  var testName = "Test note list model object exists"
-  assert.isTrue(typeof object === typeof noteList, testName )
-})();
-
 (function testNoteListAddsNote() {
   var noteList = new NoteList();
-  var noteDouble1 = new Double('Note')
-  var addedNote = noteList.addNote(noteDouble1);
+  var noteDouble = NoteDouble
+  var object = new Object
+  var addedNote = noteList.addNote('test text', noteDouble);
   var testName = "Test note list adds a new note"
-  assert.isTrue(addedNote === noteDouble1, testName)
+  assert.isTrue(typeof addedNote === typeof object, testName)
 })();
 
-
-
-// (function testNoteListHoldsNotes() {
-//   var noteList = new NoteList();
-//   var noteDouble1 = new Double('Note')
-//   var noteDouble2 = new Double('Note')
-//   var testName = "Test displayNotes function"
-//
-//   assert.isTrue(noteList.displayNotes === [noteDouble1, noteDouble2], testName)
-// };)();
+(function testNoteListHoldsNotes() {
+  var noteList = new NoteList();
+  var noteDouble = NoteDouble
+  var testName = "Test displayNotes function"
+  noteList.addNote('test text1', noteDouble);
+  noteList.addNote('test text2', noteDouble);
+  assert.isTrue(noteList.displayNotes()[0].displayNote === 'test text1', testName)
+  assert.isTrue(noteList.displayNotes().length === 2, testName)
+})();
