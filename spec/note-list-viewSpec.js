@@ -15,7 +15,8 @@ EmptyNoteListDouble.prototype.displayNotes = function () {
 };
 
 (function testEmptyNoteModel () {
-  noteListView = new NoteListView(EmptyNoteListDouble)
+  var emptyNoteListDouble = new EmptyNoteListDouble();
+  noteListView = new NoteListView(emptyNoteListDouble)
   htmlOutput = 'no notes'
   testName = 'test that it returns an html string for an empty note model'
   assert.isTrue(noteListView.printHtml() === htmlOutput, testName)
@@ -31,7 +32,8 @@ OneNoteListDouble.prototype.displayNotes = function () {
 };
 
 (function testOneNoteModel () {
-  noteListView = new NoteListView(OneNoteListDouble)
+  var oneNoteListDouble = new OneNoteListDouble()
+  noteListView = new NoteListView(oneNoteListDouble)
   htmlOutput = `<ul><li><div>single test</div></li></ul>`
   testName = 'test that it returns an html string for a one note model'
   assert.isTrue(noteListView.printHtml() === htmlOutput, testName)
@@ -46,7 +48,8 @@ SeveralNoteListDouble.prototype.displayNotes = function () {
 };
 
 (function testOneNoteModel () {
-  noteListView = new NoteListView(SeveralNoteListDouble)
+  var severalNoteListDouble = new SeveralNoteListDouble();
+  noteListView = new NoteListView(severalNoteListDouble);
   htmlOutput = `<ul><li><div>single test</div></li></ul><ul><li><div>second test</div></li></ul><ul><li><div>third test</div></li></ul>`
   testName = 'test that it returns an html string for a several note model'
   assert.isTrue(noteListView.printHtml() === htmlOutput, testName)

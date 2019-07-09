@@ -1,7 +1,7 @@
 (function (exports) {
 
-  var NoteListView = function (noteModel = NoteModel) {
-    this.noteModel = new noteModel();
+  var NoteListView = function (noteModel) {
+    this.noteModel = noteModel;
   }
 
   NoteListView.prototype.printHtml = function () {
