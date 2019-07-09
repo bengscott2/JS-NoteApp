@@ -1,0 +1,23 @@
+{
+  "name": "single_page_app",
+  "version": "1.0.0",
+  "description": "### Description This single page web app once completed will give you the ability to access a webpage to store your notes. This will have it's own testing framework as well it will store all notes and independent note objects.",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengscott2/JS-NoteApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengscott2/JS-NoteApp/issues"
+  },
+  "homepage": "https://github.com/bengscott2/JS-NoteApp#readme"
+}
