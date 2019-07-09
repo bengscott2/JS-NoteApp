@@ -1,3 +1,7 @@
+function NoteDouble (text) {
+    this.displayNote = text;
+};
+
 (function testNoteListAddsNote() {
   var noteList = new NoteList();
   var noteDouble = NoteDouble

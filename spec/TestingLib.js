@@ -7,7 +7,3 @@ var assert = {
     }
   }
 };
-
-function NoteDouble (text) {
-    this.displayNote = text;
-};
