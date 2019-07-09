@@ -7,3 +7,7 @@ var assert = {
     }
   }
 };
+
+function Double (name) {
+    this.name = name;
+};

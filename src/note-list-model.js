@@ -4,9 +4,14 @@
     this.notes = []
   }
 
-  Note.prototype.displayNotes = function () {
+  NoteList.prototype.displayNotes = function () {
     return this.notes
   }
 
-  exports.NoteList = NoteList     
+  NoteList.prototype.addNote = function (note = new Note()) {
+    this.notes.push(note);
+    return this.notes[this.notes.length - 1]
+  }
+
+  exports.NoteList = NoteList
 })(this);
