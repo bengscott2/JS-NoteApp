@@ -1,20 +1,16 @@
 (function (exports) {
-  var NoteController = function (noteList, noteListView = NoteListView) {
+  var NoteController = function (noteList, noteListView = NoteListView, docID = 'app') {
     this.noteList = noteList;
-    this.noteList.addNote('Favourite drink: seltzer');
-    this.noteList.addNote('teststrhdfhgkjdfhgddfgkjhdfg');
     this.noteListView = new noteListView(this.noteList);
+    this.docID = docID;
   };
 
   NoteController.prototype.insertHtml = function () {
     var html = this.noteListView.printHtml();
-    var app = document.getElementById('app');
+    var app = document.getElementById(this.docID);
     app.innerHTML = html;
+    return html
   };
 
   exports.NoteController = NoteController
 })(this);
-
-var noteList = new NoteList()
-var noteController = new  NoteController(noteList);
-noteController.insertHtml()
