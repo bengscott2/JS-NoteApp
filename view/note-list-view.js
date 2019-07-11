@@ -7,7 +7,10 @@
   NoteListView.prototype.printHtml = function () {
     if (this.noteListModel.displayNotes().length === 0) return 'no notes'
     var html = []
-    html = this.noteListModel.displayNotes().map(note => `<ul><li><div>${note.displayNote()}</div></li></ul>`)
+    html = this.noteListModel.displayNotes().map(function(note){
+      var noteText = note.displayNote().slice(0,20)
+      return `<ul><li><div>${noteText}</div></li></ul>`
+    })
     return html.join('')
   };
 
