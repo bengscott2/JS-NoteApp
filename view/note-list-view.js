@@ -1,13 +1,13 @@
 (function (exports) {
 
-  var NoteListView = function (noteListModel) {
-    this.noteListModel = noteListModel;
+  var NoteListView = function (noteList) {
+    this.noteList = noteList;
   }
 
   NoteListView.prototype.printHtml = function () {
-    if (this.noteListModel.displayNotes().length === 0) return 'no notes'
+    if (this.noteList.displayNotes().length === 0) return 'no notes'
     var html = []
-    html = this.noteListModel.displayNotes().map(function(note){
+    html = this.noteList.displayNotes().map(function(note){
       var noteText = note.displayNote().slice(0,20)
       return `<ul><li><div><a href="#${note.id}">${noteText}</a></div></li></ul>`
     })
