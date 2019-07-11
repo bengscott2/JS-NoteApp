@@ -9,7 +9,7 @@
     var html = []
     html = this.noteListModel.displayNotes().map(function(note){
       var noteText = note.displayNote().slice(0,20)
-      return `<ul><li><div>${noteText}</div></li></ul>`
+      return `<ul><li><div><a href="#${note.id}">${noteText}</a></div></li></ul>`
     })
     return html.join('')
   };

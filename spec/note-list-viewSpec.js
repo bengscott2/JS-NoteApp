@@ -1,5 +1,6 @@
-function NoteDouble (text) {
+function NoteDouble (text, id) {
     this.text = text;
+    this.id = id
 };
 
 NoteDouble.prototype.displayNote = function () {
@@ -24,7 +25,7 @@ EmptyNoteListDouble.prototype.displayNotes = function () {
 
 
 function OneNoteListDouble () {
-  this.notes = [new NoteDouble('single test')]
+  this.notes = [new NoteDouble('single test', 0)]
 }
 
 OneNoteListDouble.prototype.displayNotes = function () {
@@ -34,13 +35,13 @@ OneNoteListDouble.prototype.displayNotes = function () {
 (function testOneNoteModel () {
   var oneNoteListDouble = new OneNoteListDouble()
   noteListView = new NoteListView(oneNoteListDouble)
-  htmlOutput = `<ul><li><div>single test</div></li></ul>`
+  htmlOutput = `<ul><li><div><a href="#0">single test</a></div></li></ul>`
   testName = 'test that it returns an html string for a one note model'
   assert.isTrue(noteListView.printHtml() === htmlOutput, testName)
 })();
 
 function SeveralNoteListDouble () {
-  this.notes = [new NoteDouble('single test'),new NoteDouble('second test'), new NoteDouble('third test')]
+  this.notes = [new NoteDouble('single test', 0),new NoteDouble('second test', 1), new NoteDouble('third test', 2)]
 }
 
 SeveralNoteListDouble.prototype.displayNotes = function () {
@@ -50,7 +51,7 @@ SeveralNoteListDouble.prototype.displayNotes = function () {
 (function testOneNoteModel () {
   var severalNoteListDouble = new SeveralNoteListDouble();
   noteListView = new NoteListView(severalNoteListDouble);
-  htmlOutput = `<ul><li><div>single test</div></li></ul><ul><li><div>second test</div></li></ul><ul><li><div>third test</div></li></ul>`
+  htmlOutput = `<ul><li><div><a href="#0">single test</a></div></li></ul><ul><li><div><a href="#1">second test</a></div></li></ul><ul><li><div><a href="#2">third test</a></div></li></ul>`
   testName = 'test that it returns an html string for a several note model'
   assert.isTrue(noteListView.printHtml() === htmlOutput, testName)
 })();
