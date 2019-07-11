@@ -1,6 +1,6 @@
 (function (exports) {
 
-  var SingleNoteView = function (noteModel = NoteModel) {
+  var SingleNoteView = function (noteModel) {
     var noteModel = noteModel;
 
     printHtml = function () {
